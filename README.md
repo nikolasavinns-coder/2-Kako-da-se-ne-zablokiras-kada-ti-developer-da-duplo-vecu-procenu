@@ -1,0 +1,1 @@
+# 2.-Kako-da-se-ne-zablokiras-kada-ti-developer-da-duplo-vecu-procenu
