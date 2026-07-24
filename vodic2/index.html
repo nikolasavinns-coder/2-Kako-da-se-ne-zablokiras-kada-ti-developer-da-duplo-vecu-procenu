@@ -46,7 +46,7 @@
   /* ── HERO ─────────────────────────────────────────── */
   .hero {
     background: var(--bg);
-    padding: 64px 24px 56px;
+    padding: 64px 24px 36px;
     text-align: center;
   }
   .hero .cover-card {
@@ -82,7 +82,7 @@
   .doc {
     max-width: 760px;
     margin: 0 auto;
-    padding: 56px 28px 80px;
+    padding: 36px 28px 80px;
   }
   .doc p { margin: 0 0 16px; font-size: 1.04rem; }
   .doc p:last-child { margin-bottom: 0; }
@@ -96,9 +96,30 @@
     color: var(--navy);
     line-height: 1.16;
     font-size: 2.2rem;
-    margin: 0 auto 14px;
-    text-align: center;
-    max-width: 680px;
+    margin: 0 0 18px;
+    text-align: left;
+    max-width: 720px;
+  }
+  .intro-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 22px;
+    color: var(--accent);
+    font-size: .76rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .intro-kicker::before,
+  .intro-kicker::after {
+    content: "";
+    display: block;
+    width: clamp(20px, 5vw, 42px);
+    height: 2px;
+    background: var(--accent);
   }
   .hero-subtitle {
     font-size: 1.05rem;
@@ -541,15 +562,15 @@
 
     /* ── 8. PULL REFLECTION (retoričko pitanje) ──────────── */
   .pull-reflect {
-    margin: 30px auto 32px;
-    max-width: 600px;
-    text-align: center;
+    margin: 28px 0 30px;
+    max-width: 680px;
+    text-align: left;
   }
   .pull-reflect p {
     font-family: 'Lora', serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 1.22rem;
+    font-size: 1.15rem;
     color: var(--navy);
     line-height: 1.5;
     margin: 0;
@@ -561,16 +582,7 @@
     height: 2px;
     border-radius: 999px;
     background: rgba(200,146,42,.55);
-    margin: 0 auto 18px;
-  }
-  .pull-reflect::after {
-    content: "";
-    display: block;
-    width: 46px;
-    height: 2px;
-    border-radius: 999px;
-    background: rgba(200,146,42,.55);
-    margin: 18px auto 0;
+    margin: 0 0 14px;
   }
 
   /* ── 8b. MID-SECTION HEADLINE (npr. "Odgovornosti u razgovoru o proceni") ── */
@@ -809,11 +821,17 @@
 
   /* ── RESPONSIVE ───────────────────────────────────── */
   @media (max-width: 680px) {
-    .hero { padding: 44px 18px 40px; }
+    .hero { padding: 44px 18px 28px; }
     .hero img { border-radius: 14px; }
-    .doc { padding: 36px 20px 64px; }
+    .doc { padding: 28px 20px 64px; }
     .doc p { font-size: 1rem; }
     .h-display { font-size: 1.72rem; }
+    .intro-kicker {
+      gap: 9px;
+      margin-bottom: 18px;
+      font-size: .68rem;
+      letter-spacing: .1em;
+    }
     .h-section { font-size: 1.5rem; }
     .h-step { font-size: 1.2rem; }
     .card { padding: 22px 20px; }
@@ -845,6 +863,7 @@
     .hero .cover-card { max-width: 280px; }
     .cover-name { font-size: .82rem; bottom: 7.5%; }
     .h-display { font-size: 1.46rem; }
+    .intro-kicker { white-space: normal; }
     .doc { padding-left: 16px; padding-right: 16px; }
     .card { padding: 20px 16px; }
     .example-section { padding: 20px 14px; }
@@ -874,6 +893,7 @@
 
 <!-- ══ INTRO ══════════════════════════════════════════ -->
 <section id="uvod">
+  <div class="intro-kicker">PM Decision Playbook · Vodič 02</div>
   <h1 class="h-display">Kako da se ne zablokiraš kada ti developer da duplo veću procenu od očekivane?</h1>
 
   <p>Radiš kao Product Manager i definisao si važnu funkcionalnost. Očekivao si <strong>4 dana</strong> razvoja, a developer procenjuje <strong>8 dana</strong>.</p>
@@ -882,7 +902,7 @@
   <ul class="list">
     <li>procena se ne uklapa u očekivanja,</li>
     <li>imaš pritisak rokova,</li>
-    <li>nemaš dovoljno poverenja u informacije koje dobijaš od developera.</li>
+    <li>nemaš dovoljno poverenja u informacije koje dobijaš od developera i sl.</li>
   </ul>
 
   <div class="pull-reflect">
@@ -891,9 +911,9 @@
 
   <p>Možda, ako imaš tehnički background ili višegodišnje iskustvo rada sa developerima. U suprotnom, takva rasprava često vodi ka konfliktu, gubitku poverenja i slabljenju kredibiliteta.</p>
 
-  <p>Bolji pristup je da sa developerom razmeniš informacije, razumeš tehničke odluke i zajedno definišete prihvatljiv scope.</p>
+  <p>Bolji pristup je da na radnom sastanku sa developerom razmeniš informacije, razumeš razloge iza tehničkih odluka i u dogovoru sa njim definišeš prihvatljiv scope.</p>
 
-  <p>Da bi razgovor o proceni bio produktivan, prvo treba da se podsetimo ko donosi koje odluke tokom usklađivanja funkcionalnog scope-a i tehničke procene.</p>
+  <p>Da bi sastanak o proceni bio produktivan, prvo treba da se podsetimo ko donosi koje odluke tokom usklađivanja funkcionalnog scope-a i tehničke procene.</p>
 
   <h3 class="h-sub">Odgovornosti u ovom procesu</h3>
 
@@ -922,7 +942,7 @@
   <div class="note-block">
     <div class="note-sub">
       <div class="note-label">Kako da pristupiš proceni</div>
-      <p>Ne treba da slepo prihvatiš procenu, niti da ulaziš u tehničku raspravu bez dovoljno znanja. Traži objašnjenja, proveri pretpostavke i fokusiraj se na odluke o funkcionalnom scope-u.</p>
+      <p>Ne treba da slepo prihvatiš procenu, niti da ulaziš u tehničku raspravu bez dovoljno znanja. Traži objašnjenja, proveri pretpostavke i fokusiraj se na odluke o funkcionalnom scope-u. Tako kroz proces gradiš tehničko razumevanje potrebno za preciznija pitanja, bez preuzimanja tehničkih odluka koje pripadaju developeru.</p>
     </div>
     <div class="note-sub">
       <div class="note-label">Šta dobijaš vremenom</div>
@@ -989,9 +1009,9 @@
     </div>
   </div>
 
-  <p>Tehnički minimum često obuhvata rad koji nije vidljiv korisniku, a Product Manager ga lako izostavi iz početnih očekivanja. Zato procena može delovati neočekivano visoka dok developer ne objasni sve što je neophodno, poput modela podataka, validacija, prava pristupa, migracija, obrade grešaka i testiranja.</p>
+  <p>Tehnički minimum često obuhvata rad koji nije vidljiv korisniku, a Product Manager ga lako može izostaviti iz početnih očekivanja. Zato procena može delovati neočekivano visoka dok developer ne objasni sve što je neophodno, poput modela podataka, validacija, prava pristupa, migracija, obrade grešaka i testiranja.</p>
 
-  <p>Product Manager ne definiše MVP samostalno. Dogovor sa klijentom ili stakeholderima postavlja očekivanja i ograničenja, dok Product Manager i developer zajedno usklađuju funkcionalni scope sa tehničkim minimumom. Tehnički rad često nije vidljiv korisniku, ali mora biti deo procene i isporuke.</p>
+  <p>Product Manager često ne definiše MVP samostalno. Dogovor sa klijentom ili stakeholderima postavlja očekivanja i ograničenja, dok Product Manager i developer zajedno usklađuju funkcionalni scope sa tehničkim minimumom. Tehnički rad često nije vidljiv korisniku, ali mora biti deo procene i isporuke.</p>
 
   <div class="takeaway">
     <strong>Dogovoreni MVP je najmanji obim koji korisniku donosi vrednost i ima tehničku osnovu da pouzdano radi.</strong>
@@ -1112,7 +1132,7 @@
   <!-- ── KORAK 2 primer ─────────────────────────── -->
   <h3 class="h-step" style="margin-top:36px;">Korak 2: Uskladi product i tehnički minimum</h3>
 
-  <p>Kada utvrdiš tačne relacije između funkcionalnosti i procena, ne ubeđuješ developera da brže napiše kod.</p>
+  <p>Kada sa developerom utvrdiš tačne relacije između funkcionalnosti i procena, ne ubeđuješ ga da brže napiše kod.</p>
   <p>Zajedno utvrđujete product i tehnički minimum i definišete MVP.</p>
 
   <div class="module-card">
